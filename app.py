@@ -2,15 +2,18 @@ import streamlit as st
 import mysql.connector
 from mysql.connector import Error
 import pandas as pd
+import os
+from dotenv import load_dotenv
 
+load_dotenv()
 # Function to create a database connection
 def create_connection():
     try:
         connection = mysql.connector.connect(
-            host='localhost',
-            database='suhasvarna',  # Replace with your database name
-            user='root',            # Replace with your MySQL username
-            password='#goku@2003'   # Replace with your MySQL password
+            host=os.getenv("DB_HOST"),
+            database=os.getenv("DB_NAME"),
+            user=os.getenv("DB_USER"),
+            password=os.getenv("DB_PASSWORD")
         )
         if connection.is_connected():
             db_info = connection.get_server_info()
