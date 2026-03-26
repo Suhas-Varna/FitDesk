@@ -369,7 +369,8 @@ FitDesk/
 
 ---
 
-<section id="screenshots">
+<!-- <section id="screenshots">
+
 
 ## Screenshots & App Demonstration
 
@@ -381,10 +382,10 @@ FitDesk/
 <img src="screenshots/add_member.png" width="200"/>
 <img src="screenshots/membership.png" width="200"/>
 <img src="screenshots/trainers.png" width="200"/>
--->
+
 
 </section>
-
+-->
 ---
 
 <section id="conclusion">
