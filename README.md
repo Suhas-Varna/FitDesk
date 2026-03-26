@@ -1,13 +1,13 @@
-# 🏋️‍♂️ Gym Management System
+# 🏋️‍♂️ FitDesk - Gym Management System
 ## A full-stack gym administration platform built with Python, Streamlit & MySQL — enabling complete management of members, trainers, memberships, and workout classes through a clean web interface.
 
 <h2>Table of Contents</h2>
 <ul>
   <li><a href="#about">About</a></li>
   <ul>
-    <li><a href="#what-is-gms">What is Gym Management System?</a></li>
+    <li><a href="#what-is-gms">What is FitDesk?</a></li>
     <li><a href="#features">Features</a></li>
-    <li><a href="#why-gms">Why Gym Management System?</a></li>
+    <li><a href="#why-gms">Why FitDesk?</a></li>
   </ul>
   <li><a href="#getting-started">Getting Started</a></li>
   <ul>
@@ -29,9 +29,9 @@
 
 ## About
 
-<h3 id="what-is-gms">What is Gym Management System?</h3>
+<h3 id="what-is-gms">What is FitDesk?</h3>
 
-The **Gym Management System** is a full-stack web application built using **Python** and **Streamlit**, backed by a **MySQL** relational database. It provides gym administrators with a clean, intuitive interface for managing members, memberships, trainers, and workout classes — complete with secure login authentication, duplicate prevention logic, cascaded deletion, and real-time database synchronization.
+The **FitDesk** is a full-stack web application built using **Python** and **Streamlit**, backed by a **MySQL** relational database. It provides gym administrators with a clean, intuitive interface for managing members, memberships, trainers, and workout classes — complete with secure login authentication, duplicate prevention logic, cascaded deletion, and real-time database synchronization.
 
 Designed as a **DBMS mini-project**, it demonstrates full CRUD operations, relational integrity constraints, and a lightweight UI layer built entirely in Python.
 
@@ -71,7 +71,7 @@ Designed as a **DBMS mini-project**, it demonstrates full CRUD operations, relat
   - All CRUD operations commit instantly to MySQL.
   - Inline success and error feedback using Streamlit notifications.
 
-<h3 id="why-gms">Why Gym Management System?</h3>
+<h3 id="why-gms">Why FitDesk?</h3>
 
 - **Eliminates Manual Record-Keeping**: Replaces paper-based or spreadsheet gym management with a fast, database-backed web interface.
 - **Enforces Data Integrity**: Relational constraints, duplicate checks, and cascaded deletions ensure clean and consistent data at all times.
@@ -112,8 +112,8 @@ Before you begin, ensure the following are installed in your environment:
 
 #### Clone the Repository:
 ```bash
-git clone https://github.com/<your-username>/gym-management-system.git
-cd gym-management-system
+git clone https://github.com/Suhas-Varna/FitDesk.git
+cd FitDesk
 ```
 
 <h3 id="backend-setup">Database Setup (MySQL)</h3>
@@ -122,8 +122,8 @@ cd gym-management-system
 
 2. **Create the database**:
 ```sql
-CREATE DATABASE suhasvarna;
-USE suhasvarna;
+CREATE DATABASE databasename;
+USE databasename;
 ```
 
 3. **Create the required tables**:
@@ -170,7 +170,7 @@ CREATE TABLE workout_class (
 ```python
 connection = mysql.connector.connect(
     host='localhost',
-    database='suhasvarna',   # Your database name
+    database='databasename',   # Your database name
     user='root',             # Your MySQL username
     password='your_password' # Your MySQL password
 )
@@ -236,29 +236,29 @@ The app will open at: `http://localhost:8501`
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────┐
-│                        Gym Management System                            │
-│  ┌──────────────────┐  ┌──────────────────────┐  ┌──────────────────┐  │
-│  │   Login Screen   │→ │  Sidebar Navigation  │→ │  Feature Module  │  │
-│  └──────────────────┘  └──────────────────────┘  └──────────────────┘  │
+│                      FitDesk (Gym Management System)                    │
+│  ┌──────────────────┐  ┌──────────────────────┐  ┌──────────────────┐   │
+│  │   Login Screen   │→ │  Sidebar Navigation  │→ │  Feature Module  │   │
+│  └──────────────────┘  └──────────────────────┘  └──────────────────┘   │
 │              ↓                    ↓                        ↓            │
-│  ┌──────────────────┐  ┌──────────────────────┐  ┌──────────────────┐  │
-│  │ Member Manager   │  │ Membership Manager   │  │ Trainer Manager  │  │
-│  │  (CRUD)          │  │  (CRUD + Validation) │  │  (CRUD)          │  │
-│  └──────────────────┘  └──────────────────────┘  └──────────────────┘  │
+│  ┌──────────────────┐  ┌──────────────────────┐  ┌──────────────────┐   │
+│  │ Member Manager   │  │ Membership Manager   │  │ Trainer Manager  │   │
+│  │  (CRUD)          │  │  (CRUD + Validation) │  │  (CRUD)          │   │
+│  └──────────────────┘  └──────────────────────┘  └──────────────────┘   │
 │              ↓                    ↓                        ↓            │
 │  ┌──────────────────────────────────────────────────────────────────┐   │
-│  │              Python Query Layer (app.py)                        │   │
-│  │  execute_read_query() │ execute_write_query()                   │   │
-│  │  execute_update_query() │ execute_delete_query()                │   │
+│  │              Python Query Layer (app.py)                         │   │
+│  │  execute_read_query() │ execute_write_query()                    │   │
+│  │  execute_update_query() │ execute_delete_query()                 │   │
 │  └──────────────────────────────────────────────────────────────────┘   │
 └──────────────────────────────│──────────────────────────────────────────┘
                                │  mysql-connector-python
                                ▼
 ┌─────────────────────────────────────────────────────────────────────────┐
 │                            MySQL Database                               │
-│  ┌────────────┐  ┌─────────────────┐  ┌───────────┐  ┌─────────────┐  │
-│  │   member   │  │  gym_membership │  │  trainer  │  │workout_class│  │
-│  └────────────┘  └─────────────────┘  └───────────┘  └─────────────┘  │
+│  ┌────────────┐  ┌─────────────────┐  ┌───────────┐  ┌─────────────┐    │
+│  │   member   │  │  gym_membership │  │  trainer  │  │workout_class│    │
+│  └────────────┘  └─────────────────┘  └───────────┘  └─────────────┘    │
 └─────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -355,7 +355,7 @@ suhasvarna/
 ### ⚡ Application Structure
 
 ```
-gym-management-system/
+FitDesk/
 │
 ├── app.py                  # Main Streamlit application (all logic)
 ├── requirements.txt        # Python dependencies
@@ -391,7 +391,7 @@ gym-management-system/
 
 ## Conclusion
 
-The **Gym Management System** successfully delivers a complete, database-driven admin platform for gym operations. By combining the simplicity of **Streamlit** with the reliability of **MySQL**, the system handles all core gym workflows — member onboarding, membership control, trainer management, and class administration — in one unified interface.
+The **FitDesk** successfully delivers a complete, database-driven admin platform for gym operations. By combining the simplicity of **Streamlit** with the reliability of **MySQL**, the system handles all core gym workflows — member onboarding, membership control, trainer management, and class administration — in one unified interface.
 
 The project demonstrates practical application of DBMS concepts including normalization, foreign key constraints, relational integrity, and CRUD operations, while maintaining a clean and accessible user experience entirely within Python.
 
